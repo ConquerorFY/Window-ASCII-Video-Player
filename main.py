@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-'''
-Alex Eidt
-
-Converts videos/images into ASCII video/images in various formats.
-'''
-
 import argparse
 import numpy as np
 from PIL import Image, ImageFont, ImageDraw, ImageGrab
@@ -131,8 +124,8 @@ def convert_ascii(
     img,
     chars,
     monochrome,
-    fontsize=20,
-    boldness=2,
+    fontsize=3,
+    boldness=5,
     reverse=False,
     background=255,
     clip=True,
@@ -162,7 +155,7 @@ def parse_args():
 
     return parser.parse_args()
 
-chars = np.array(list(charset2))
+chars = np.array(list(charset1))
 monochrome = np.array(
     [],
     dtype=np.uint16,
