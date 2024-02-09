@@ -1,7 +1,7 @@
+colorama==0.4.6
 mss==9.0.1
 numpy==1.26.4
 opencv-python==4.9.0.80
 pillow==10.2.0
-PyScreeze==0.1.30
 pywin32==306
 six==1.16.0
