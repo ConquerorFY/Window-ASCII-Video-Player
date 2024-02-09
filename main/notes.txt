@@ -1,0 +1,3 @@
+Setting for Baretail when using running output.txt (text-video-player.main.py):
+    1. Size: 2
+    2. Update interval: 10ms (can go lower for faster performance)

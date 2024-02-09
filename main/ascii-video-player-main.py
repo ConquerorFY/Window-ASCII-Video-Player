@@ -1,4 +1,3 @@
-import argparse
 import numpy as np
 from PIL import Image, ImageFont, ImageDraw, ImageGrab
 import cv2
@@ -124,7 +123,7 @@ def convert_ascii(
     img,
     chars,
     monochrome,
-    fontsize=3,
+    fontsize=4,
     boldness=5,
     reverse=False,
     background=255,
@@ -135,27 +134,9 @@ def convert_ascii(
     font_bitmaps = get_font_bitmaps(fontsize, boldness, reverse, background, chars, font)
     image = draw_ascii(image, chars, background, clip, monochrome, font_bitmaps)
     # cv2.imshow("Output", image)
-    cv2.imwrite('output.jpg', image)
-    # Open the file using the default text editor (e.g., Notepad)
-    # subprocess.Popen(['notepad.exe', 'image.txt'])
+    cv2.imwrite('../output.jpg', image)
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='Blazing fast ASCII Media converter.')
-
-    parser.add_argument('-chars', '--characters', help='ASCII chars to use in media.', default='@%#*+=-:. ')
-    parser.add_argument('-r', '--reverse', help='Reverse the character order.', action='store_true')
-    parser.add_argument('-f', '--fontsize', help='Font size.', type=int, default=20)
-    parser.add_argument('-b', '--bold', help='Boldness of characters. Recommended: 1/10 font size.', type=int, default=2)
-    parser.add_argument('-bg', '--background', help='Background color. Must be 255 (white) or 0 (black).', type=int, default=255)
-    parser.add_argument('-m', '--monochrome', help='Color to use for Monochromatic characters in "R,G,B" format.')
-    parser.add_argument('-c', '--clip', help='Clip characters to not go outside of image bounds.', action='store_false')
-    parser.add_argument('-font', '--font', help='Font to use.', type=str, default='cour.ttf')
-    parser.add_argument('-a', '--audio', help='Add audio from the input file to the output file.', action='store_true')
-    parser.add_argument('-q', '--quality', help='Quality of the output video. (0-10), 0 worst, 10 best.', type=int, default=5)
-
-    return parser.parse_args()
-
-chars = np.array(list(charset1))
+chars = np.array(list(charset2))
 monochrome = np.array(
     [],
     dtype=np.uint16,
