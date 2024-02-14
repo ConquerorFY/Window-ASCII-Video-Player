@@ -6,7 +6,7 @@
    - Recommended to have at least Python 3.9+
 
 ### Installation:
-1. Clone this git repository bu running `git clone https://github.com/ConquerorFY/Window-ASCII-Video-Player.git`
+1. Clone this git repository by running `git clone https://github.com/ConquerorFY/Window-ASCII-Video-Player.git`
    - or you could choose to download the repository
 2.  Install the Python dependencies by running `pip install -r requirements.txt`
     - you could opt to do this in an Python virtual environment or directly in the main Python environment
