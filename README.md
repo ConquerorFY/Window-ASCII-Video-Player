@@ -20,7 +20,7 @@
 5.  Go to `Preferences` -> `Options`:
     - change `Size` to 2
     - change `Update interval` to 1ms
-    - you could update these vaalues however you see fit!
+    - you could update these values however you see fit
 6. The ASCII stream should be visible and would be updated in real-time.
 
 ### Example:

@@ -6,7 +6,7 @@ from PIL import Image, ImageGrab
 ASCII_CHARS_1 = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 ASCII_CHARS_2 = ['M', 'W', 'N', 'B', 'E', 'H', 'K', 'R', 'm', 'A', '#', '@', 'X', 'Q', 'b', 'd', '8', 'D', 'F', 'G', 'w', 'P', 'h', 'k', 'Z', 'U', 'S', '6', '9', 'x', 'T', 'p', 'q', 'O', '4', 'e', 'g', 'V', '0', 'a', 'f', '5', '%', '2', '$', 'L', 'Y', 'n', 's', '&', 'C', '3', 'u', 'z', 'J', 'y', 'o', 'v', 'I', 'r', 't', 'c', 'l', 'i', '1', 'j', '?', '7', '=', '>', '<', '"', '+', '*', ']', '[', '}', '(', ')', '{', '/', '\\', '!', ';', '|', ':', '^', '-', '~', "'", ',', '_', '.', '`']
 
-def resized_gray_image(image, new_width=500):
+def resized_gray_image(image, new_width=400):
 	width,height = image.size
 	aspect_ratio = height/width
 	new_height = int(aspect_ratio * new_width)
@@ -18,7 +18,7 @@ def pix2chars(image):
 	characters = "".join([ASCII_CHARS_1[pixel//25] for pixel in pixels])
 	return characters
 
-def generate_frame(image, new_width=500):
+def generate_frame(image, new_width=400):
 	new_image_data = pix2chars(resized_gray_image(image))
 	total_pixels = len(new_image_data)
 	ascii_image = "\n".join([new_image_data[index:(index+new_width)] for index in range(0, total_pixels, new_width)])
