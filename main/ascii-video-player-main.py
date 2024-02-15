@@ -142,7 +142,7 @@ monochrome = np.array(
     dtype=np.uint16,
 )
 while True:
-    # (x, y, w, h), slect portion of the screen to screenshot
+    # (x, y, w, h), select portion of the screen to screenshot
     img = ImageGrab.grab(bbox=(0, 0, 1920, 1080))
     img_np = np.array(img)
     convert_ascii(img_np, chars, monochrome)
